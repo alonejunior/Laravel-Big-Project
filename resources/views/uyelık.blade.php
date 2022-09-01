@@ -3,14 +3,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>iletişim Formu</title>
+    <title>Uye Kayıt Formu</title>
   </head>
   <body>
-        <form  action="{{route('iletisim-sonuc')}}" method="post">
+    @if($errors->any())
+  <ul>
+    @foreach($errors->all() as $hatalar)
+    <li>
+{{$hatalar}}
+    </li>
+    @endforeach
+
+
+
+    @endif
+        </ul>
+        <form  action="{{route('uyekayit')}}" method="post">
           @csrf
 
               <label>Ad Soyad</label> <br>
-              <input type="text" name="ad soyad" > <br>
+              <input type="text" name="adsoyad" > <br>
 
               <label>Telefon</label> <br>
               <input type="text" name="telefon" > <br>
@@ -18,9 +30,7 @@
               <label>E-mail</label> <br>
               <input type="text" name="mail" > <br>
 
-              <label>Mesaj</label> <br>
-              <input type="text" name="ad soyad" > <br>
-              <textarea name="metin" style="width:300px; height:200px" ></textarea> <br>
+
               <input type="submit" name="ilet" value="Gönder">
 
 

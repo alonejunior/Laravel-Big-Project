@@ -15,4 +15,4 @@ class Yonet extends Controller
       $data["yazi5"]="Bize Ulaşın";
       return view('web',$data);
     }
-}
+  }
